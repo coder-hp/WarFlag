@@ -29,6 +29,15 @@ public class HeroScript : MonoBehaviour
         standCellScript = _cellScript;
         //transform.position = new Vector3(standCellScript.transform.position.x, 0, standCellScript.transform.position.z);
         transform.position = standCellScript.transform.position;
+
+        if(_cellScript.isGrass)
+        {
+            transform.Find("body111").GetComponent<Renderer>().material.color = new Color(1, 1, 1, 0.4f);
+        }
+        else
+        {
+            transform.Find("body111").GetComponent<Renderer>().material.color = new Color(1, 1, 1, 1);
+        }
     }
 
     private void OnMouseDown()

@@ -27,7 +27,17 @@ public class MapItem : MonoBehaviour
     {
         if (other.transform.CompareTag("Cell"))
         {
-            other.GetComponent<CellScript>().setCellType(CellType.DisAble);
+            if(transform.CompareTag("Grass"))
+            {
+                other.GetComponent<CellScript>().setCellType(CellType.Null);
+                other.GetComponent<CellScript>().isGrass = true;
+            }
+            else
+            {
+                other.GetComponent<CellScript>().setCellType(CellType.DisAble);
+            }
+
+            GetComponent<MeshCollider>().enabled = false;
         }
     }
 

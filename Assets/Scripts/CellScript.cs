@@ -7,6 +7,7 @@ public class CellScript : MonoBehaviour
     public CellType cellType  = CellType.Null;
     public int index_x = 0;
     public int index_z = 0;
+    public bool isGrass = false;
 
     void Start()
     {
